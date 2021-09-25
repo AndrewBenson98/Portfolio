@@ -1,0 +1,29 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<h2 class="text-center font-kalam">Projects</h2>
+
+<div class="container">
+
+    <div class="projects-container grid-container">
+
+        {% for project in projects %}
+        <a href="{% url 'project-detail' project.url_name %}">
+            <div class="project-item-wrapper" data-info={{ project.pk }}>
+                <div class="project-image" style="background-image: url('{{ project.mainImage.url }}');"></div>
+                <div class="img-text-wrapper">
+                    <div class="project-title font-kalam">
+                        {{ project.name }}
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+
+{% endblock %}

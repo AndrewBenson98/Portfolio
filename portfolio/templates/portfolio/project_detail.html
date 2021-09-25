@@ -1,0 +1,28 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<div class="container padding">
+    <h1 class="font-kalam">{{ project.name }}</h1>
+    <hr>
+    <div class="row padding">
+        <div class="proj-detail-wrapper col-lg-6">
+            <p>{{ project.description_long }}</p>
+            <div class="project-links d-flex ">
+                <div class="link-wrapper m-2">
+                    <a class="btn btn-outline-success" href="{{ project.gitLink }}">GitHub Code</a>
+                </div>
+
+                {% if project.liveLink %}
+                <div class="link-wrapper m-2">
+                    <a class="btn btn-outline-success" href="{{ project.liveLink }}">Live Site</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <!-- Image here -->
+            <img class="img-fluid rounded" src="{{ project.mainImage.url }}" alt="">
+        </div>
+    </div>
+</div>
+{% endblock %}
