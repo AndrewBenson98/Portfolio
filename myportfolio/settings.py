@@ -128,9 +128,9 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
@@ -160,8 +160,8 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 #AWS FOR FILE STORAGE
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-#AWS_STORAGE_BUCKET_NAME = "arbenson-portfolio-files"
+#AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_STORAGE_BUCKET_NAME = "arbenson-portfolio-files"
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
