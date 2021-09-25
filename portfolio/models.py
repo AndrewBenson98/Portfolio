@@ -1,5 +1,6 @@
 from django.db import models
 from PIL import Image
+from portfolio.utils import image_resize
 # Create your models here.
 
 class Project(models.Model):
@@ -16,10 +17,12 @@ class Project(models.Model):
     
     #Resize large images
     def save(self, *args, **kwargs):
+        image_resize(self.mainImage, 600, 350)
         super().save(*args, **kwargs)
-        img = Image.open(self.mainImage.path)
+        # super().save(*args, **kwargs)
+        # img = Image.open(self.mainImage.path)
         
-        if img.height>300 or img.width>600:
-            output_size = (600,300)
-            img.thumbnail(output_size)
-            img.save(self.mainImage.path)
+        # if img.height>300 or img.width>600:
+        #     output_size = (600,300)
+        #     img.thumbnail(output_size)
+        #     img.save(self.mainImage.path)
