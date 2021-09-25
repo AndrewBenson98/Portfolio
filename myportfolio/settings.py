@@ -157,8 +157,8 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 #AWS FOR FILE STORAGE
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-#AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-AWS_STORAGE_BUCKET_NAME = "arbenson-portfolio-files"
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+#AWS_STORAGE_BUCKET_NAME = "arbenson-portfolio-files"
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
@@ -172,4 +172,4 @@ AWS_S3_REGION_NAME = 'us-east-2'
 
 
 #Heroku deployment
-#django_heroku.settings(locals())
+django_heroku.settings(locals())
