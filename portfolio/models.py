@@ -11,6 +11,7 @@ class Project(models.Model):
     gitLink = models.CharField(max_length=255,blank=True)
     liveLink = models.CharField(max_length=255,blank=True)
     mainImage = models.ImageField(default='default.jpg', upload_to='project_images')
+    starred = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

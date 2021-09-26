@@ -10,7 +10,7 @@ from django.core.mail import send_mail
 
 class HomeView(ListView):
     template_name = 'portfolio/home.html'
-    queryset = Project.objects.all()[:5]
+    queryset = Project.objects.filter(starred=True)
     context_object_name = 'projects'
     
 class ProjectListView(ListView):
